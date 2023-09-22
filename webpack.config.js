@@ -3,17 +3,18 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    module: 'development', 
+    mode: 'development', 
     entry: {
         index: './client/index.js'
     },
     output: {
-        path.resolve(__dirname, 'bundle'),
+        path: path.resolve(__dirname, 'bundle'),
         filename: 'bundle.js'
     },
     devServer: {
         static: {
-            directory: path.join(__dirname, 'public'),
+            publicPath: "/build/bundle/js",
+            directory: path.join(__dirname, 'client/static'),
         },
         compress: true,
         port: 8080,
@@ -24,7 +25,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'client/public/index.html'
+            template: 'client/static/index.html'
         })
     ],
     module: {
