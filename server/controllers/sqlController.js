@@ -1,7 +1,6 @@
 const express = require('express');
 const db = require('../models/muscleOTLModels');
 
-
 const sqlController = {};
 
 // Middleware to fetch 
