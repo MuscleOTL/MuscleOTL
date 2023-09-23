@@ -21,7 +21,7 @@ sqlController.getExercises = async (req, res, next) => {
     // define elephant/SQL query in const
     // await db.query
 
-    return next();
+    return next
 }
 
 module.exports = sqlController;
