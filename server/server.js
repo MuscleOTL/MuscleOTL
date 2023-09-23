@@ -22,7 +22,7 @@ dbRouter.get('api/:muscle', sqlController.getExercises, (req, res, next) => {
 
 //404 if page doesn't exist
 app.use('*', (err, req, res) => {
-    const err = new Error(`Can't find ${res.originalUrl} on the server`);
+    const error = new Error(`Can't find ${res.originalUrl} on the server`);
     err.status = 'fail';
     err.statusCode = 404;
     
@@ -34,10 +34,9 @@ app.use((err, req, res, next) => {
     err.statusCode = err.statusCode || 500;
     err.status = err.status || 'error'
     res.status(err.statusCode).json({   //internal server error
-        status: err.statusCode;
+        status: err.statusCode,
         message: err.message
     }); 
-
 
 })
 
