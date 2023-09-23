@@ -6,7 +6,6 @@ const sqlController = require('./controllers/sqlController');
 
 const PORT = 3000;
 
-
 // pre-built middleware
 app.use('/bundle', express.static(path.join(__dirname, '../bundle')));
 app.use(express.json());
