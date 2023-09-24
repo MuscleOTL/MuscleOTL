@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react';
 
-const bodyButton = () => {
+const BodyButton = () => {
 
-    async function handleClick () {
+    function handleClick () {
         
-        fetch("http://localhost:3000/api/biceps", {
-            method: "GET" })
+        console.log("1");
+
+        fetch("/api/bicep")
             .then(response => response.json())
-            .then(response => console.log(response));
+            .then(response => console.log(response))
+            .catch( (err) => { console.log("Error here") } );
     }
 
     return (
@@ -17,13 +19,5 @@ const bodyButton = () => {
     );
 };
 
-// const bodyParts = () => {
 
-//     return(
-
-//     );
-// }
-
-
-
-export default bodyButton;
+export default BodyButton;

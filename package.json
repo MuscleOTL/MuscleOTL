@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nodemon server/server.js",
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server && nodemon server/server.js"
   },
   "keywords": [],
   "authors": "Laura Ramirez, Aaron Cruz, Jeff Chan, Nassim Bahet",

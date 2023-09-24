@@ -11,7 +11,6 @@ app.use('api/bundle', express.static(path.join(__dirname, '../bundle')));
 app.use(express.json());
 app.use(bodyParser.json());
 
-
 // router
 
 // const dbRouter = express.Router();
@@ -21,11 +20,15 @@ app.use(bodyParser.json());
 // app.use('/api', dbRouter);
 
 // get all exercises of a given muscle (ID)
-app.get('/api/:muscle', sqlController.getExercises, (req, res, next) => {
-    return res.status(200).json(res.locals.exerciseResult);
+app.get('/api/:muscle', sqlController.getExercises, (req, res) => {
+    console.log("hello");
+    return res.status(200).json(res.locals.exerciseInfo);
 });
 
-
+// serve static files
+app.get('/', (req, res) => {
+    return res.status(200).sendFile(path.join(__dirname, '../client/static/index.html'))
+});
 
 //404 if page doesn't exist
 app.use('*', (err, req, res, next) => {
