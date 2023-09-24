@@ -1,9 +1,5 @@
 const { Pool } = require('pg');
-
-// Assign our elephant PG_URI here as a string.
-// const PG_URI = 'postgres://irkenepc:Sde2y8gum39MZmRtXoianYDLCtvjoZTS@bubble.db.elephantsql.com/irkenepc';
-
-// console.log("URI", process.env.PG_URI);
+require('dotenv').config();
 
 // Create a new pool here using the connection string above.
 const pool = new Pool({
