@@ -1,8 +1,12 @@
 import React from 'react';
-import Home from './homeComponent.jsx';
+import Home from './Home.jsx';
 
-function App() {}
-
-//helloooo
+function App() {
+    return (
+        <div className="App">
+            <Home />
+        </div>
+    )
+}
 
 export default App;
