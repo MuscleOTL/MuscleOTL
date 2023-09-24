@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+import { useNavigate } from "react-router-dom"
 
 const buttonStyles = {
     backgroundColor: 'red',
@@ -15,17 +15,20 @@ const flexer = {
     alignItems: 'center'
 }
 
-function Body(){
+function Home(){
     const[bodyTest, changeBody] = useState('TOUCH MY BODY')
     // const title = 'MUSCLEOTL';
+    // const navigate = useNavigate();
+
+
     return (
     <div style = {flexer} >
         <h1 style={{color: 'purple'}}>MUSCLEOTL</h1>
-        <button id ='body' style = {buttonStyles}>{bodyTest}</button>
+        <button id ='body' style = {buttonStyles} onClick={()=>navigate('/body')}>{bodyTest}</button>
     </div>
     
     );
 }
 
 
-export {Body}
+export {Home}

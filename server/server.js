@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require('body-parser')
 const sqlController = require('./controllers/sqlController');
 
+require('dotenv').config();
+
 const PORT = 3000;
 
 // pre-built middleware
