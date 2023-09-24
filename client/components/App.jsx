@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './bodyComponent';
+import Home from './homeComponent.jsx';
 
 function App() {}
 
