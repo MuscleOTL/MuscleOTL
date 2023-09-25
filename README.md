@@ -1,6 +1,6 @@
 <br />
   <div align="left">
-    <img src="./client/static/Axolotls-img.png" alt="Logo" width="200" height="auto">
+    <img src="./client/static/Axolotls-img.png" alt="Logo" width="300" height="auto">
   </div>
 <br />
 
