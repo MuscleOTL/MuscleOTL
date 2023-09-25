@@ -7,8 +7,8 @@ const sqlController = require('./controllers/sqlController');
 const PORT = 3000;
 
 // pre-built middleware
-app.use('api/bundle', express.static(path.join(__dirname, '../bundle')));
-app.use(express.json());
+app.use('api/bundle', express.static(path.join(__dirname, '../bundle'))); // serve static assets to client
+app.use(express.json()); // makes req.body available
 app.use(bodyParser.json());
 
 
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 // get all exercises of a given muscle (ID)
 app.get('/api/:muscle', sqlController.getExercises, (req, res, next) => {
-    return res.status(200).json(res.locals.exerciseResult);
+    return res.status(200).json(res.locals.exerciseInfo);
 });
 
 
