@@ -7,8 +7,8 @@ const sqlController = require('./controllers/sqlController');
 const PORT = 3000;
 
 // pre-built middleware
-app.use('api/bundle', express.static(path.join(__dirname, '../bundle')));
-app.use(express.json());
+app.use('api/bundle', express.static(path.join(__dirname, '../bundle'))); // serve static assets to client
+app.use(express.json()); // makes req.body available
 app.use(bodyParser.json());
 
 
