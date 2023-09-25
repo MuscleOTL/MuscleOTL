@@ -18,7 +18,6 @@ const BodyPage = () => {
     return (
         <div>
             <div style = {navStyle}>MUSCLEOTL</div>
-            <NavBar />
             <Body />
         </div>
     );
