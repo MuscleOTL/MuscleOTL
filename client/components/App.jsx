@@ -1,19 +1,12 @@
 import React from 'react';
-import {BrowserRouter,Routes,Route} from "react-router-dom";
-import Home from './homeComponent';
+import Home from './Home.jsx';
 
 function App() {
-    
     return (
-        <>
-        <BrowserRouter>
-        <Routes>
-            <Route exact path="/" element={<Home/>}/>
-            <Route exact path="/body" element={<Body/>}/>
-        </Routes>
-        </BrowserRouter>
-        </>
-    );
+        <div className="App">
+            <Home />
+        </div>
+    )
 }
 
 export default App;
