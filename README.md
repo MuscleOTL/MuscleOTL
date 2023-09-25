@@ -1,8 +1,35 @@
-Laura
+<br />
+  <div align="left">
+    <img src="./client/static/Axolotls-img.png" alt="Logo" width="300" height="auto">
+  </div>
+<br />
 
--commit your changes to feature branch
--switch to local dev branch
--pull changes from remote dev branch
--merge feature branch into local dev
--commit to local dev
--push to remote dev branch
+## MuscleOTL
+
+## About
+
+MuscleOTL is an interactive application where you can select body parts on screen, then generate exercises for that given muscle group.
+
+## Getting Started (for iteration developers)
+
+**First, install your dependencies**
+
+```bash
+npm install
+```
+
+**Second, configure your environment variable(s):**
+
+Make a .env file in your root directory and add your PG_URI database URL
+
+```bash
+PG_URI=YOUR_POSTGRESQL_DATABASE_URL
+```
+
+**Third, run the development server:**
+
+```bash
+npm run dev
+# or
+yarn dev
+```
