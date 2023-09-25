@@ -1,10 +1,11 @@
 import React from 'react';
 import Body from './Body.jsx';
+import NavBar from './NavBar.jsx';
 
 const BodyPage = () => {
     return (
         <div>
-            Body Page
+            <NavBar />
             <Body />
         </div>
     );
