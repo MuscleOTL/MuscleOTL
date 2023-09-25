@@ -1,8 +1,10 @@
 import React from 'react';
-import Home from './bodyComponent';
+import BodyButton from './Body.jsx'
 
-function App() {}
+function App() {
 
-//helloooo
+    return(<BodyButton />)
+
+}
 
 export default App;
