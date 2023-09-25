@@ -1,5 +1,6 @@
 ## MuscleOTL
 
+<br />
 ## About
 
 MuscleOTL is an interactive application where you can select body parts on screen, then generate exercises for that given muscle group.
