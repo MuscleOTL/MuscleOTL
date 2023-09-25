@@ -2,6 +2,9 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// Jeff comment
+// Jeff comment 2
+
 module.exports = {
     mode: 'development', 
     entry: {
