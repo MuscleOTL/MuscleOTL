@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 // get all exercises of a given muscle (ID)
 app.get('/api/:muscle', sqlController.getExercises, (req, res, next) => {
-    return res.status(200).json(res.locals.exerciseResult);
+    return res.status(200).json(res.locals.exerciseInfo);
 });
 
 
