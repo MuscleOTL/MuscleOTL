@@ -1,6 +1,32 @@
 import React, { useState, useEffect } from 'react';
+import ModalData from './ModalData.jsx';
+import Modal from '@mui/material/Modal';
 
-function Body() {
+const Body = () => {
+
+    // MODAL STATE MANAGEMENT AND FETCHING
+
+    const [bodyModal, setBodyModal] = useState(false);
+    const [muscleName, setMuscleName] = useState('');
+    const [muscleData, setMuscleData] = useState([]);
+
+    function toggleModal() {
+        setBodyModal(prev => !prev);
+    }
+
+    async function handleClick(muscle) {
+        try {
+            const data = await fetch(`/api/${muscle}`);
+            const res = await data.json();
+
+            setMuscleName(muscle);
+            setMuscleData(res);
+            toggleModal() // toggles modal
+        } catch (err) {
+            console.log(err)        
+        }
+    }
+
     const [selectedCell, setSelectedCell] = useState(null);
 
     const rows = 15;
@@ -35,7 +61,6 @@ function Body() {
         "2-2":"chest",
         "4-7": "glutes",
         "4-8": "glutes"
-        
     };
 
     const grid = [];
@@ -64,7 +89,7 @@ function Body() {
     }
 
     function handleCellClick(cellId) {
-        console.log(`Cell clicked: ${cellId}`);
+        // console.log(`Cell clicked: ${cellId}`);
         setSelectedCell(cellId);
 
         if (cellMuscleMap[cellId]) {
@@ -77,27 +102,35 @@ function Body() {
         }
     }
 
-    async function handleClick(muscle) {
-        const data = await fetch(`/api/${muscle}`);
-        const res = await data.json();
-        console.log(res);
-        }
+    // async function handleClick(muscle) {
+    //     const data = await fetch(`/api/${muscle}`);
+    //     const res = await data.json();
+    //     console.log(res);
+    // }
+
+    useEffect(() => {
+        console.log("muscle", muscleName);
+        console.log("New muscle data", muscleData);
+    }, [muscleData])
 
     return (
-        <div id='Big Div' style={backgroundImageStyle}>
-            <div style={gridStyle}>
-                {grid}
+        <div>
+            {/* <button onClick={() => handleClick('bicep')}> Biceps </button>
+            <button onClick={() => handleClick('tricep')}> Tricep </button>
+            <button onClick={() => handleClick('chest')}> Chest </button>
+            <button onClick={() => handleClick('glutes')}> Glutes </button> */}
+
+            <div id='Big Div' style={backgroundImageStyle}>
+                <div style={gridStyle}>
+                    {grid}
+                </div>
             </div>
+        
+            <Modal open={bodyModal} onClose={toggleModal}>
+                <ModalData muscleName={muscleName} data={muscleData}/>
+            </Modal>
         </div>
     );
-}
+};
 
 export default Body;
-
-
-
-
-
-
-
-

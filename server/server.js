@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 const bodyParser = require('body-parser')
 const sqlController = require('./controllers/sqlController');
+const userController = require('./controllers/userController')
 
 const PORT = 3000;
 
@@ -10,6 +11,7 @@ const PORT = 3000;
 app.use('api/bundle', express.static(path.join(__dirname, '../bundle'))); // serve static assets to client
 app.use(express.json()); // makes req.body available
 app.use(bodyParser.json());
+
 
 
 
@@ -21,6 +23,18 @@ app.use(bodyParser.json());
 // });
 // app.use('/api', dbRouter);
 
+app.get('/api/users', userController.getAllUsers, (req, res) => {
+    return res.status(200).send(res.locals.users);
+});
+
+app.post('/api/signup', userController.createUser, (req, res) => {
+    return res.status(200).send(res.locals.person);
+});
+
+app.post('/api/login', userController.verifyUser, (req, res) => {
+    return res.status(200).send(res.locals.person);
+});
+
 // get all exercises of a given muscle (ID)
 app.get('/api/:muscle', sqlController.getExercises, (req, res, next) => {
     return res.status(200).json(res.locals.exerciseInfo);
@@ -30,6 +44,9 @@ app.get('/api/:muscle', sqlController.getExercises, (req, res, next) => {
 app.get('/', (req, res) => {
     return res.status(200).sendFile(path.join(__dirname, '../client/static/index.html'))
 });
+
+
+
 
 //404 if page doesn't exist
 app.use('*', (err, req, res, next) => {

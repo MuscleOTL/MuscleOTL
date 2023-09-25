@@ -1,5 +1,6 @@
 import React from 'react';
 import Body from './Body.jsx';
+import NavBar from './NavBar.jsx';
 
 const navStyle = {
     height: '60px', 
@@ -11,8 +12,6 @@ const navStyle = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-
-
 }
 
 const BodyPage = () => {
