@@ -1,8 +1,5 @@
 const { Pool } = require('pg');
-
-// Assign our elephant PG_URI here as a string.
-
-// console.log("URI", process.env.PG_URI);
+require('dotenv').config();
 
 // Create a new pool here using the connection string above.
 const pool = new Pool({
