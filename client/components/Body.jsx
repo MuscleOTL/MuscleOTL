@@ -3,6 +3,30 @@ import ModalData from './ModalData.jsx';
 import Modal from '@mui/material/Modal';
 
 const Body = () => {
+
+    // MODAL STATE MANAGEMENT AND FETCHING
+
+    const [bodyModal, setBodyModal] = useState(false);
+    const [muscleName, setMuscleName] = useState('');
+    const [muscleData, setMuscleData] = useState([]);
+
+    function toggleModal() {
+        setBodyModal(prev => !prev);
+    }
+
+    async function handleClick(muscle) {
+        try {
+            const data = await fetch(`/api/${muscle}`);
+            const res = await data.json();
+
+            setMuscleName(muscle);
+            setMuscleData(res);
+            toggleModal() // toggles modal
+        } catch (err) {
+            console.log(err)        
+        }
+    }
+
     const [selectedCell, setSelectedCell] = useState(null);
 
     const rows = 15;
@@ -37,7 +61,6 @@ const Body = () => {
         "2-2":"chest",
         "4-7": "glutes",
         "4-8": "glutes"
-        
     };
 
     const grid = [];
@@ -79,28 +102,16 @@ const Body = () => {
         }
     }
 
-    // MODAL STATE MANAGEMENT AND FETCHING
+    // async function handleClick(muscle) {
+    //     const data = await fetch(`/api/${muscle}`);
+    //     const res = await data.json();
+    //     console.log(res);
+    // }
 
-    const [bodyModal, setBodyModal] = useState(false);
-    const [muscleName, setMuscleName] = useState('');
-    const [muscleData, setMuscleData] = useState([]);
-
-    function toggleModal() {
-        setBodyModal(prev => !prev);
-    }
-
-    async function handleClick(muscle) {
-        try {
-            const data = await fetch(`/api/${muscle}`);
-            const res = await data.json();
-            console.log(res);
-            setMuscleName(muscle);
-            setMuscleData(res);
-            toggleModal() // toggles modal
-        } catch (err) {
-            console.log(err)        
-        }
-    }
+    useEffect(() => {
+        console.log("muscle", muscleName);
+        console.log("New muscle data", muscleData);
+    }, [muscleData])
 
     return (
         <div>
