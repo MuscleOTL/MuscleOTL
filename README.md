@@ -8,6 +8,8 @@ MuscleOTL is an interactive application where you can select body parts on scree
 
 First, configure your environment variable(s):
 
+Make a .env file in your root directory and add your PG_URI database URL
+
 ```bash
 PG_URI=YOUR_POSTGRESQL_DATABASE_URL
 ```
