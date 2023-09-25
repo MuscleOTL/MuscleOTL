@@ -27,3 +27,11 @@ npm run dev
 # or
 yarn dev
 ```
+
+## Tech Stack
+
+<div align="center" width="100%">
+            
+[![Typescript][TS.js]][TS-url] [![JavaScript][JavaScript]][JavaScript-url] [![React][React.js]][React-url] [![React Router][React Router]][React-Router-url] [![Node.js][Node.js]][Node-url] 
+[![Prisma][Prisma.js]][Prisma-url] [![Jest][Jest]][Jest-url] [![Tailwind][Tailwind]][Tailwind-url] [![DaisyUI][DaisyUI]][DaisyUI-url][![Electron.js][Electron.js]][Electron-url] [![AWS][AWS]][AWS-url] [![Next][Next.js]][Next-url] [![Supabase][Supabase]][Supabase-url] [![Express][Express.js]][Express-url]
+</div>
