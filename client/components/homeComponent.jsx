@@ -4,12 +4,17 @@ import {useNavigate} from "react-router-dom"
 
 const buttonStyles = {
     backgroundColor: 'red',
-    color: 'black',
+    color: '#292b2c',
+    fontSize: "1rem",
+    lineHeight: 2,
+    borderRadius: '5px', 
+    fontWeight: 'bold'
 }
 
 const flexer = {
     backgroundImage: "url('https://thumbs.dreamstime.com/b/bodybuilding-male-muscle-anatomy-strong-muscular-man-silhouette-front-side-back-view-vector-illustration-infografic-scheme-246471950.jpg')",
-    border: '1px solid black', 
+    backgroundPosition: 'top center',
+    border: '1px solid grey', 
     padding: '10px',
     display: 'flex',
     flexDirection: 'column',
@@ -19,12 +24,13 @@ const flexer = {
 
 const title = {
         fontFamily: 'Comic Sans',
-        fontSize: "4rem",
+        fontSize: "5rem",
         fontWeight: 1.5,
-        lineHeight: 1.5,
+        lineHeight: 2.5,
         color: "#292b2c",
-        backgroundColor: "#fff",
-        padding: "0 2em"
+        backgroundColor: 'rgba(52, 52, 52,)',
+        padding: "0 2em",
+        textShadow: "-1px 0 red, 0 1px red, 1px 0 red, 0 -1px red"
 }
 
 function Home(){
