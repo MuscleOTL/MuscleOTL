@@ -5,6 +5,8 @@ require('dotenv').config();
 const sqlController = {};
 
 sqlController.getExercises = async (req, res, next) => {
+    console.log("inside of getExercises controller");
+    
     const { muscle } = req.params;
     const values = [muscle];
     console.log(muscle);

@@ -18,7 +18,7 @@ const flexer = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
 }
 
 const title = {
@@ -28,8 +28,9 @@ const title = {
     lineHeight: 2.5,
     color: "#292B2C",
     backgroundColor: 'rgba(52, 52, 52,)',
-    padding: "0 2em",
-    textShadow: "-1px 0 red, 0 1px red, 1px 0 red, 0 -1px red"
+    padding: "0em 1em 0em 1em",
+    textShadow: "-1px 0 red, 0 1px red, 1px 0 red, 0 -1px red",
+    marginTop: '0'
 }
 
 function Home (){
