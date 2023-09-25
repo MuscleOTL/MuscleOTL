@@ -1,5 +1,5 @@
 import React from 'react';
-import BodyButton from './BodyButton.jsx'
+import BodyButton from './Body.jsx'
 
 function App() {
 

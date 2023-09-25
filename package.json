@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nodemon server/server.js",
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack-dev-server && nodemon server/server.js"
+    "dev": "webpack-dev-server --open && nodemon server/server.js"
   },
   "keywords": [],
   "authors": "Laura Ramirez, Aaron Cruz, Jeff Chan, Nassim Bahet",
@@ -28,6 +28,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
+    "style-loader": "^3.3.3",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
