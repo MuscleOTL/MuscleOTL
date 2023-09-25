@@ -23,15 +23,19 @@ function Body() {
         backgroundImage: `url(https://community.fabric.microsoft.com/t5/image/serverpage/image-id/448798i1C256498D1C654B4?v=v2)`,
         backgroundPosition: '',
         backgroundRepeat: "no-repeat",
-        borderLeft: "200px solid transparent",
+        borderLeft: "400px solid transparent",
         borderRight: "1000px solid transparent"
     };
 
     const cellMuscleMap = {
         "2-1": "bicep",
+        "2-3": "bicep",
         "2-6": "tricep",
+        "2-8": "tricep",
         "2-2":"chest",
-        "4-7": "glutes"
+        "4-7": "glutes",
+        "4-8": "glutes"
+        
     };
 
     const grid = [];
@@ -43,7 +47,7 @@ function Body() {
             const cellStyle = {
                 width: '5em',
                 height: '5em',
-                // border: '1px solid #ccc',
+                // border: '1px solid #ccc',  /* uncomment for grid */
                 margin: '0.1px',
                 cursor: 'pointer',
             };
@@ -66,6 +70,10 @@ function Body() {
         if (cellMuscleMap[cellId]) {
             const muscle = cellMuscleMap[cellId];
             handleClick(muscle);
+        }
+        if(cellId === "4-2"){
+            console.log('NOT COC APPROVED');
+            alert('NOT COC APPROVED');
         }
     }
 
