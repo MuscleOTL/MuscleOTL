@@ -66,7 +66,7 @@ const Body = () => {
     }
 
     function handleCellClick(cellId) {
-        console.log(`Cell clicked: ${cellId}`);
+        // console.log(`Cell clicked: ${cellId}`);
         setSelectedCell(cellId);
 
         if (cellMuscleMap[cellId]) {
@@ -79,7 +79,7 @@ const Body = () => {
         }
     }
 
-
+    // MODAL STATE MANAGEMENT AND FETCHING
 
     const [bodyModal, setBodyModal] = useState(false);
     const [muscleName, setMuscleName] = useState('');
@@ -104,10 +104,16 @@ const Body = () => {
 
     return (
         <div>
-            <button onClick={() => handleClick('bicep')}> Biceps </button>
+            {/* <button onClick={() => handleClick('bicep')}> Biceps </button>
             <button onClick={() => handleClick('tricep')}> Tricep </button>
             <button onClick={() => handleClick('chest')}> Chest </button>
-            <button onClick={() => handleClick('glutes')}> Glutes </button>
+            <button onClick={() => handleClick('glutes')}> Glutes </button> */}
+
+            <div id='Big Div' style={backgroundImageStyle}>
+                <div style={gridStyle}>
+                    {grid}
+                </div>
+            </div>
         
             <Modal open={bodyModal} onClose={toggleModal}>
                 <ModalData muscleName={muscleName} data={muscleData}/>
