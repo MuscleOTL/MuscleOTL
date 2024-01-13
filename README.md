@@ -5,7 +5,7 @@ MuscleOTL is the ultimate app for gym beginners, providing a comprehensive guide
 # Features
 
 # Exercise Exploration 🤸
--**Dynamic Body Map:** Explore a dynamic body map where you can click on each muscle to discover a curated list of exercises that target it.
+- **Dynamic Body Map:** Explore a dynamic body map where you can click on each muscle to discover a curated list of exercises that target it.
 -**Muscle-Specific Workouts:** Understand which exercises work best for each muscle group, empowering you to create effective and balanced workout routines.
 
 # Personalization 🧘
